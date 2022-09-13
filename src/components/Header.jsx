@@ -1,7 +1,12 @@
+import React from 'react';
+
 function Header() {
   return(
-    <header>HEADER HERE</header>
+    <header>
+
+ <h1>TESTE HEADER</h1>
+    </header>
   )
 }
 
-export default Header
+export default Header;
