@@ -3,10 +3,11 @@ import Header from "../components/Header";
 import { getArtistAlbuns } from "../API/searchAlbuns";
 import ArtistContext from "../context/ArtistContext";
 import CardList from "../components/CardList";
+import Loading from "../components/Loading";
 
 
 function Search() {
-  const { enableArtists, setEnableArtists, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
+  const { loading, setLoading, enableArtists, setEnableArtists, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
 
   const handleChange = ({ target }) => {
     setSearchInputValue(target.value);
@@ -14,10 +15,12 @@ function Search() {
 
   const handleClick = async (e, artist) => {
     e.preventDefault()
+    setLoading(true);
     const allAlbuns = await getArtistAlbuns(artist);
     setArtistAlbuns(allAlbuns);
     setSearchInputValue("");
     setEnableArtists(true);
+    setLoading(false);
   }
 
   return(
@@ -30,7 +33,8 @@ function Search() {
           disabled={ serchInputValue.length < 2 } >TESTE API
         </button>
       </form>
-        {enableArtists ? <CardList /> : <h1>Digite artista(teste)</h1>}
+        {loading ? <Loading /> : ""}
+        {enableArtists && !loading ? <CardList /> : ""}
     </main>
   )
 }
