@@ -3,11 +3,10 @@ import Header from "../components/Header";
 import { getArtistAlbuns } from "../API/searchAlbuns";
 import ArtistContext from "../context/ArtistContext";
 import CardList from "../components/CardList";
-import NotFound from "../components/NotFound";
 
 
 function Search() {
-  const { artistAlbuns, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
+  const { enableArtists, setEnableArtists, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
 
   const handleChange = ({ target }) => {
     setSearchInputValue(target.value);
@@ -18,11 +17,11 @@ function Search() {
     const allAlbuns = await getArtistAlbuns(artist);
     setArtistAlbuns(allAlbuns);
     setSearchInputValue("");
+    setEnableArtists(true);
   }
 
   return(
     <main>
-      {console.log("a")}
       <Header />
       <form>
         <input type="text" placeholder="Pesquisa" onChange={ handleChange } value={ serchInputValue }/>
@@ -31,7 +30,7 @@ function Search() {
           disabled={ serchInputValue.length < 2 } >TESTE API
         </button>
       </form>
-        {!artistAlbuns ? <NotFound /> : <CardList />}
+        {enableArtists ? <CardList /> : <h1>Digite artista(teste)</h1>}
     </main>
   )
 }

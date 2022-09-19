@@ -4,6 +4,7 @@ import ArtistContext from "./ArtistContext";
 function ArtistProvider({ children }) {
   const [artistAlbuns, setArtistAlbuns] = useState([]);
   const [serchInputValue, setSearchInputValue] = useState("");
+  const [enableArtists, setEnableArtists ] = useState(false);
 
 
 const contextValue = {
@@ -11,6 +12,8 @@ const contextValue = {
   setArtistAlbuns,
   serchInputValue,
   setSearchInputValue,
+  enableArtists,
+  setEnableArtists, 
 };
 
 return (
