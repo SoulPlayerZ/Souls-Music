@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import ArtistContext from "../context/ArtistContext";
+import Card from "./Card";
 
 function CardList() {
+  const { artistAlbuns } = useContext(ArtistContext);
   return (
     <div>
-      <h2>A</h2>
+      {artistAlbuns.map((album) => (<Card key={ album.collectionId } album={ album }/> ))}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Header from "../components/Header";
 import { getArtistAlbuns } from "../API/searchAlbuns";
 import ArtistContext from "../context/ArtistContext";
-import Card from "../components/Card";
+import CardList from "../components/CardList";
 
 function Search() {
   const { artistAlbuns, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
@@ -24,8 +24,7 @@ function Search() {
       <button onClick={() => {handleClick (serchInputValue)} } 
       disabled={ serchInputValue.length < 2 } >TESTE API</button>
       <div>
-        {!artistAlbuns ? <h1>estado vazio</h1> : artistAlbuns.map((album) => (
-        <Card key={ album.collectionId } album={ album }/>))}
+        {!artistAlbuns ? <h1>estado vazio</h1> : <CardList />}
       </div>
     </main>
   )
