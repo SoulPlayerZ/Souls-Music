@@ -3,6 +3,8 @@ import Header from "../components/Header";
 import { getArtistAlbuns } from "../API/searchAlbuns";
 import ArtistContext from "../context/ArtistContext";
 import CardList from "../components/CardList";
+import NotFound from "../components/NotFound";
+
 
 function Search() {
   const { artistAlbuns, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
@@ -11,7 +13,8 @@ function Search() {
     setSearchInputValue(target.value);
   }
 
-  const handleClick = async (artist) => {
+  const handleClick = async (e, artist) => {
+    e.preventDefault()
     const allAlbuns = await getArtistAlbuns(artist);
     setArtistAlbuns(allAlbuns);
     setSearchInputValue("");
@@ -19,13 +22,16 @@ function Search() {
 
   return(
     <main>
+      {console.log("a")}
       <Header />
-      <input type="text" placeholder="Pesquisa" onChange={ handleChange } value={ serchInputValue }/>
-      <button onClick={() => {handleClick (serchInputValue)} } 
-      disabled={ serchInputValue.length < 2 } >TESTE API</button>
-      <div>
-        {!artistAlbuns ? <h1>estado vazio</h1> : <CardList />}
-      </div>
+      <form>
+        <input type="text" placeholder="Pesquisa" onChange={ handleChange } value={ serchInputValue }/>
+        <button
+          onClick={(e) => {handleClick (e, serchInputValue)} } 
+          disabled={ serchInputValue.length < 2 } >TESTE API
+        </button>
+      </form>
+        {!artistAlbuns ? <NotFound /> : <CardList />}
     </main>
   )
 }
