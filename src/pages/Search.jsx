@@ -6,8 +6,16 @@ import CardList from "../components/CardList";
 import Loading from "../components/Loading";
 
 
+
 function Search() {
-  const { loading, setLoading, enableArtists, setEnableArtists, setArtistAlbuns, serchInputValue, setSearchInputValue } = useContext(ArtistContext);
+  const { loading,
+    setLoading,
+    enableArtists,
+    setEnableArtists,
+    setArtistAlbuns,
+    serchInputValue,
+    setSearchInputValue
+  } = useContext(ArtistContext);
 
   const handleChange = ({ target }) => {
     setSearchInputValue(target.value);

@@ -8,7 +8,7 @@ function Login () {
       setUserInputValue,
       passwordInputValue,
       setPasswordInputValue,
-      setLogin,
+      setLogin
     } = useContext(LoginContext);
 
     const handleChange = ({ target }) => {
