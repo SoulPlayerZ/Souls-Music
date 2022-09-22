@@ -1,5 +1,9 @@
 .album-card {
   border: 2px solid red;
+  width: 230px;
+  height: 230px;
+  margin: 20px;
+
 }
 
 .Link {
