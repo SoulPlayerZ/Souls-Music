@@ -1,10 +1,10 @@
 import React from "react";
 
-function TrackCard ({track}) {
+function TrackCard ({track, index}) {
     // console.log(track);
   return(
       <label>
-        <h3>{ track.trackName }</h3>
+        <h3>{ index + 1 + " - " + track.trackName }</h3>
         <audio src={ track.previewUrl } controls>
           <track kind={track.kind} />
             O seu navegador não suporta o elemento <code>audio</code>.
