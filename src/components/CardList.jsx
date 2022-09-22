@@ -6,10 +6,10 @@ import NotFound from "./NotFound";
 function CardList() {
   const { artistAlbuns } = useContext(ArtistContext);
   return (
-    <div>
+    <secetion>
       {artistAlbuns.length === 0 ? <NotFound />
        : artistAlbuns.map((album) => (<Card key={ album.collectionId } album={ album }/> ))}
-    </div>
+    </secetion>
   )
 }
 
