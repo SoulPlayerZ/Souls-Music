@@ -4,6 +4,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ArtistProvider from './context/ArtistProvider';
 import LoginProvider from './context/LoginProvider';
+import "./css/index.css";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

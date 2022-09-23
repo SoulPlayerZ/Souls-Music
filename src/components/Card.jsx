@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/Card.css";
-
-
 
 function Card({ album }) {
 
   return (
-    <Link to={`/album/${album.collectionId}`} className="Link">
-      <section key={ album.collectionId } className="album-card">
-        <h3>{ album.artistName }</h3>
-        <img src={ album.artworkUrl100 } alt="album-front" />
-        <h4>{ album.collectionName }</h4>
+    <Link to={`/album/${album.collectionId}`} className="card"  Style="width: 10rem;">
+      <section key={ album.collectionId } className="card-section">
+        <img src={ album.artworkUrl100 } alt="album-front" className="card-img-top" />
+        <h4 className="card-title">{ album.collectionName }</h4>
+        <h5 className="card-subtitle mb-2 text-muted">{ album.artistName }</h5>
       </section>
     </Link>
   )
