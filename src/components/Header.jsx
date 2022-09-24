@@ -6,7 +6,7 @@ function Header() {
   const { login } = useContext(LoginContext);
   return(
     <header>
-      <img src="https://www.nicepng.com/png/detail/888-8889791_tekken-7-logo-png-tekken-7.png" alt='logo' />
+      <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/10/e7/07/mzi.wcllksyu.tif/100x100bb.jpg" alt='logo' />
       <h3>User: { login }</h3>
       <nav>
         <Link to="/search">Search</Link>
