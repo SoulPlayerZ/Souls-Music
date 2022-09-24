@@ -6,8 +6,10 @@ function Header() {
   const { login } = useContext(LoginContext);
   return(
     <header>
-      <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/10/e7/07/mzi.wcllksyu.tif/100x100bb.jpg" alt='logo' />
-      <h3>User: { login }</h3>
+      <section id='header-top'>
+        <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/10/e7/07/mzi.wcllksyu.tif/100x100bb.jpg" alt='logo' />
+        <h3>User: { login }</h3>
+      </section>
       <nav>
         <Link to="/search">Search</Link>
         <Link to="/likeds">Liked Songs</Link>
