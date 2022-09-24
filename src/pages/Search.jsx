@@ -34,9 +34,16 @@ function Search() {
   return(
     <main>
       <Header />
-      <form>
-        <input type="text" placeholder="Pesquisa" onChange={ handleChange } value={ serchInputValue }/>
+      <form id="form-search">
+        <input 
+          type="text"
+          placeholder="Pesquisa"
+          className="form-control"
+          onChange={ handleChange } 
+          value={ serchInputValue }
+        />
         <button
+          className="btn btn-primary"
           onClick={(e) => {handleClick (e, serchInputValue)} } 
           disabled={ serchInputValue.length < 2 } >TESTE API
         </button>
