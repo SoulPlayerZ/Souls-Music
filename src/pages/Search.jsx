@@ -34,7 +34,7 @@ function Search() {
   return(
     <main>
       <Header />
-      <form id="form-search">
+      <form className="form-search">
         <input 
           type="text"
           placeholder="Pesquisa"

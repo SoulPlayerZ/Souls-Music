@@ -79,7 +79,7 @@ nav a:hover
   flex-flow: row wrap;
 }
 
-#form-search {
+.form-search {
   display: flex;
   justify-content: center;
   margin-top: 8%;
@@ -109,4 +109,44 @@ nav a:hover
   transition: box-shadow 0.5s;
   box-shadow: inset 0 0 0 25px #53a7ea !important;
   color: rgb(255, 255, 255) !important;
+}
+
+
+.main-login{
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  margin-top: 10em;
+  padding: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60em;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 8px rgb(65, 63, 63);
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+  padding: 5em;
+}
+
+.input-user, .input-password {
+  margin: 10px;
+  width: 20em;
+}
+
+.btn-login {
+  width: 8em;
+  align-self: center;
+  margin-top: 10%;
+}
+
+.login-title {
+  background-color: rgb(255, 255, 255);
+  align-self: center;
+
 }
