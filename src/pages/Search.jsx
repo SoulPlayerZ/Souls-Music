@@ -45,7 +45,7 @@ function Search() {
         <button
           className="btn btn-primary"
           onClick={(e) => {handleClick (e, serchInputValue)} } 
-          disabled={ serchInputValue.length < 2 } >TESTE API
+          disabled={ serchInputValue.length < 2 } >Pesquisar
         </button>
       </form>
         {loading ? <Loading /> : ""}
