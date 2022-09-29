@@ -37,7 +37,7 @@ function Login () {
         <form className="form-login">
         <h2 className="login-title ">Sign in</h2>
         <input type="text" placeholder="User" name="user" className="form-control input-user " onChange={ handleChange } value={ userInputValue }/>
-        <input type="text" placeholder="Password" name="password" className="form-control input-password " onChange={ handleChange } value={ passwordInputValue }/>
+        <input type="password" placeholder="Password" name="password" className="form-control input-password " onChange={ handleChange } value={ passwordInputValue }/>
         {<button
           onClick={(e) => {handleClick (e, userInputValue, passwordInputValue)} } 
           className="btn btn-primary btn-login"
