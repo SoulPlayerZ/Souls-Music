@@ -19,10 +19,14 @@ header {
   margin: 5px 5px 5px 4%;
 }
 
-.user{
-  background-color: rgb(45, 94, 98);
+.user {
+  background-color: rgb(76, 129, 129);
+  border-radius: 20px;
+  max-height: 30px;
+  padding: 5px  10px  35px  10px;
   margin-right: 10%;
   margin-top: 5px;
+  color: rgb(183, 225, 228);
 }
 
 nav {
