@@ -3,7 +3,7 @@ import React from "react";
 function TrackCard ({track, index}) {
     // console.log(track);
   return(
-      <label>
+      <label className="track-card">
         <h3>{ index + 1 + " - " + track.trackName }</h3>
         <audio src={ track.previewUrl } controls>
           <track kind={track.kind} />
