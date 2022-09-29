@@ -5,8 +5,6 @@ import ArtistContext from "../context/ArtistContext";
 import CardList from "../components/CardList";
 import Loading from "../components/Loading";
 
-
-
 function Search() {
   const { loading,
     setLoading,
@@ -37,7 +35,7 @@ function Search() {
       <form className="form-search">
         <input 
           type="text"
-          placeholder="Pesquisa"
+          placeholder="What do you want to listen to ?"
           className="form-control"
           onChange={ handleChange } 
           value={ serchInputValue }
@@ -45,7 +43,7 @@ function Search() {
         <button
           className="btn btn-primary"
           onClick={(e) => {handleClick (e, serchInputValue)} } 
-          disabled={ serchInputValue.length < 2 } >Pesquisar
+          disabled={ serchInputValue.length < 2 } >Search
         </button>
       </form>
         {loading ? <Loading /> : ""}

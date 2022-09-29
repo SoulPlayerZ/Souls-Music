@@ -19,7 +19,7 @@ header {
   margin: 5px 5px 5px 4%;
 }
 
-#header-top h3{
+.user{
   background-color: rgb(45, 94, 98);
   margin-right: 10%;
   margin-top: 5px;
@@ -150,3 +150,4 @@ nav a:hover
   align-self: center;
 
 }
+

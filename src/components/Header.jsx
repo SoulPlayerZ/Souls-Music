@@ -8,7 +8,7 @@ function Header() {
     <header>
       <section id='header-top'>
         <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/10/e7/07/mzi.wcllksyu.tif/100x100bb.jpg" alt='logo' />
-        <h3>User: { login }</h3>
+        <h3 className='user'>User: { login }</h3>
       </section>
       <nav>
         <Link to="/search">Search</Link>
