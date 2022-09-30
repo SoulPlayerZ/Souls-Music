@@ -5,6 +5,9 @@ function ArtistProvider({ children }) {
   const [artistAlbuns, setArtistAlbuns] = useState([]);
   const [serchInputValue, setSearchInputValue] = useState("");
   const [enableArtists, setEnableArtists ] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [infoAlbum, setInfoAlbum] = useState([])
+
 
 
 const contextValue = {
@@ -13,7 +16,11 @@ const contextValue = {
   serchInputValue,
   setSearchInputValue,
   enableArtists,
-  setEnableArtists, 
+  setEnableArtists,
+  loading,
+  setLoading,
+  infoAlbum,
+  setInfoAlbum,
 };
 
 return (
