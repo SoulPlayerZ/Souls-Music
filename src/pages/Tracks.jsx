@@ -16,6 +16,7 @@ function Tracks () {
       const oneAlbumInfo = await getMusics(id);
       setInfoAlbum(oneAlbumInfo);
       setLoading(false);
+      console.log(infoAlbum);
   };
 
   useEffect(() => {
