@@ -1,11 +1,15 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Header from "./components/Header";
+import Login from './pages/Login';
+import Search from './pages/Search';
+import Tracks from './pages/Tracks';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Header />} />
+        <Route path="/album/:id" element={<Tracks />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     </BrowserRouter>
   
