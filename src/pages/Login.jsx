@@ -11,6 +11,8 @@ function Login () {
       setPasswordInputValue,
       setUserLogin,
       setPasswordLogin,
+      setLoginOk,
+      loginOk,
     } = useContext(LoginContext);
 
     const handleChange = ({ target }) => {
@@ -19,6 +21,7 @@ function Login () {
       } else {
         setPasswordInputValue(target.value);
       }
+      setLoginOk(false);
     }
     
     const handleClick = async (e, user, password) => {
@@ -30,7 +33,7 @@ function Login () {
       const findedUser = getUser(user, password);
 
       if(!findedUser) {
-        console.log("aaaa");
+        setLoginOk(true);
       } else {
         history("/search");
       }
@@ -48,6 +51,7 @@ function Login () {
         <h2 className="login-title ">Sign in</h2>
         <input type="text" placeholder="User" name="user" className="form-control input-user " onChange={ handleChange } value={ userInputValue }/>
         <input type="password" placeholder="Password" name="password" className="form-control input-password " onChange={ handleChange } value={ passwordInputValue }/>
+        {loginOk ? <h8 className="error-message">User or Password is invalid</h8> : ""}
         {<button
           onClick={(e) => {handleClick (e, userInputValue, passwordInputValue)} } 
           className="btn btn-primary btn-login"

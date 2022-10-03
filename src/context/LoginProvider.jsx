@@ -6,6 +6,7 @@ function LoginProvider({ children }) {
   const [passwordInputValue, setPasswordInputValue] = useState("");
   const [userLogin, setUserLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
+  const [loginOk, setLoginOk] = useState(false);
 
 
 const contextValue = {
@@ -17,6 +18,8 @@ const contextValue = {
   setUserLogin,
   passwordLogin,
   setPasswordLogin,
+  loginOk,
+  setLoginOk,
 };
 
 return (

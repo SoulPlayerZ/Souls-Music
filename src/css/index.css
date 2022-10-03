@@ -165,7 +165,11 @@ nav a:hover
 .login-title {
   background-color: rgb(255, 255, 255);
   align-self: center;
+}
 
+.error-message{
+  align-self: center;
+  color: rgb(238, 0, 0);
 }
 
 /* ------- TRACKS ------- */
