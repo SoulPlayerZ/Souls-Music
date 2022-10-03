@@ -4,7 +4,8 @@ import LoginContext from "./LoginContext";
 function LoginProvider({ children }) {
   const [userInputValue, setUserInputValue] = useState("");
   const [passwordInputValue, setPasswordInputValue] = useState("");
-  const [login, setLogin] = useState("");
+  const [userLogin, setUserLogin] = useState("");
+  const [passwordLogin, setPasswordLogin] = useState("");
 
 
 const contextValue = {
@@ -12,8 +13,10 @@ const contextValue = {
   setUserInputValue,
   passwordInputValue,
   setPasswordInputValue,
-  login,
-  setLogin,
+  userLogin,
+  setUserLogin,
+  passwordLogin,
+  setPasswordLogin,
 };
 
 return (

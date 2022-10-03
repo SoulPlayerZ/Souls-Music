@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
+import { getUser } from "../data/data";
 
 function Login () {
     const history = useNavigate();
@@ -8,7 +9,8 @@ function Login () {
       setUserInputValue,
       passwordInputValue,
       setPasswordInputValue,
-      setLogin
+      setUserLogin,
+      setPasswordLogin,
     } = useContext(LoginContext);
 
     const handleChange = ({ target }) => {
@@ -19,12 +21,20 @@ function Login () {
       }
     }
     
-    const handleClick = async (e, user) => {
+    const handleClick = async (e, user, password) => {
       e.preventDefault();
-      setLogin(user);
+      setUserLogin(user);
+      setPasswordLogin(password)
       setUserInputValue("");
       setPasswordInputValue("");
-      history("/search");
+      const findedUser = getUser(user, password);
+
+      if(!findedUser) {
+        console.log("aaaa");
+      } else {
+        history("/search");
+      }
+      
     }
 
   const enableButton = () => {
