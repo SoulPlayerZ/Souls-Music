@@ -2,7 +2,9 @@ import React from "react";
 
 function Loading () {
   return(
-    <h1>LOADING...</h1>
+    <section className="loading-container">
+      <div class="lds-dual-ring"></div>
+    </section>
   )
 }
 
