@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
 import { getUser } from "../data/data";
+
 
 function Login () {
     const history = useNavigate();
@@ -59,6 +60,7 @@ function Login () {
            >Login
         </button>
         }
+        <Link to="/account">Don't have an account?</Link>
       </form>
     </main>
   )

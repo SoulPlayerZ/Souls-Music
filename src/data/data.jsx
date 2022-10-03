@@ -12,7 +12,17 @@ export const getUser = (userName, userPassword) => {
     return user.user;
   }
     return undefined;
-  
 } 
+
+export const addUser = (user, password) => {
+  if(getUser(user, password)){
+    return false;
+  } else {
+    data.push({ user, password  })
+  }
+
+  return true;
+
+}
 
 export default data;
