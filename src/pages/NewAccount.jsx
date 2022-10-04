@@ -64,7 +64,7 @@ function NewAccount () {
            >Create Account
         </button>
         }
-        <Link to="/">Sign</Link>
+        <Link to="/">Sign in</Link>
       </form>
     </main>
   )
