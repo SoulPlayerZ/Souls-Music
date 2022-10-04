@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LoginContext from "../context/LoginContext";
+import NewAccountContext from "../context/NewAccountContext";
 import { addUser } from "../data/data";
 
 function NewAccount () {
@@ -13,7 +13,7 @@ function NewAccount () {
       setPasswordAccount,
       setAccountOk,
       accountOk,
-    } = useContext(LoginContext);
+    } = useContext(NewAccountContext);
 
     const handleChange = ({ target }) => {
       if (target.name === "user"){
