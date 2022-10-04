@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
+import { getUser } from "../data/data";
+
 
 function Login () {
     const history = useNavigate();
@@ -8,7 +10,10 @@ function Login () {
       setUserInputValue,
       passwordInputValue,
       setPasswordInputValue,
-      setLogin
+      setUserLogin,
+      setPasswordLogin,
+      setLoginOk,
+      loginOk,
     } = useContext(LoginContext);
 
     const handleChange = ({ target }) => {
@@ -17,14 +22,23 @@ function Login () {
       } else {
         setPasswordInputValue(target.value);
       }
+      setLoginOk(false);
     }
     
-    const handleClick = async (e, user) => {
+    const handleClick = async (e, user, password) => {
       e.preventDefault();
-      setLogin(user);
+      setUserLogin(user);
+      setPasswordLogin(password)
       setUserInputValue("");
       setPasswordInputValue("");
-      history("/search");
+      const findedUser = getUser(user, password);
+
+      if(!findedUser) {
+        setLoginOk(true);
+      } else {
+        history("/search");
+      }
+      
     }
 
   const enableButton = () => {
@@ -38,6 +52,7 @@ function Login () {
         <h2 className="login-title ">Sign in</h2>
         <input type="text" placeholder="User" name="user" className="form-control input-user " onChange={ handleChange } value={ userInputValue }/>
         <input type="password" placeholder="Password" name="password" className="form-control input-password " onChange={ handleChange } value={ passwordInputValue }/>
+        {loginOk ? <h8 className="error-message">User or Password is invalid</h8> : ""}
         {<button
           onClick={(e) => {handleClick (e, userInputValue, passwordInputValue)} } 
           className="btn btn-primary btn-login"
@@ -45,6 +60,7 @@ function Login () {
            >Login
         </button>
         }
+        <Link to="/account">Don't have an account?</Link>
       </form>
     </main>
   )
