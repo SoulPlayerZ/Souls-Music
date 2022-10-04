@@ -40,9 +40,8 @@ function NewAccount () {
         setCreateSuccessOk(true);
         setTimeout(() => {
           history("/");
-        }, 2000);
+        }, 1500);
       }
-      
     }
 
   const enableButton = () => {
