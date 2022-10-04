@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import LoginContext from "../context/LoginContext";
+import NewAccountContext from "../context/NewAccountContext";
 import { addUser } from "../data/data";
 
 function NewAccount () {
@@ -11,9 +11,11 @@ function NewAccount () {
       setPasswordAccountInputValue,
       setUserAccount,
       setPasswordAccount,
-      setAccountOk,
-      accountOk,
-    } = useContext(LoginContext);
+      setUserExistOk,
+      userExistOk,
+      createSuccessOk,
+      setCreateSuccessOk,
+    } = useContext(NewAccountContext);
 
     const handleChange = ({ target }) => {
       if (target.name === "user"){
@@ -21,7 +23,7 @@ function NewAccount () {
       } else {
         setPasswordAccountInputValue(target.value);
       }
-      setAccountOk(false);
+      setUserExistOk(false);
     }
     
     const handleClick = async (e, user, password) => {
@@ -33,11 +35,12 @@ function NewAccount () {
       const newUser = addUser(user, password);
 
       if(!newUser) {
-        setAccountOk(true);
+        setUserExistOk(true);
       } else {
+        setCreateSuccessOk(true);
         setTimeout(() => {
           history("/");
-        }, 1000);
+        }, 2000);
       }
       
     }
@@ -52,7 +55,8 @@ function NewAccount () {
         <h2 className="login-title ">Create New Account</h2>
         <input type="text" placeholder="User" name="user" className="form-control input-user " onChange={ handleChange } value={ userAccountInputValue }/>
         <input type="password" placeholder="Password" name="password" className="form-control input-password " onChange={ handleChange } value={ passwordAccountInputValue }/>
-        {accountOk ? <h8>Success</h8> : ""}
+        {userExistOk ? <h8>That user already exists</h8> : ""}
+        {createSuccessOk ? <h8>Account created successfully</h8> : ""}
         {<button
           onClick={(e) => {handleClick (e, userAccountInputValue, passwordAccountInputValue)} } 
           className="btn btn-primary btn-login"

@@ -4,14 +4,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ArtistProvider from './context/ArtistProvider';
 import LoginProvider from './context/LoginProvider';
+import NewAccountProvider from './context/NewAccountPrivider';
 import "./css/index.css";
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
     <ArtistProvider>
       <LoginProvider>
-        <App />
+        <NewAccountProvider>
+          <App />
+        </NewAccountProvider>
       </LoginProvider>
     </ArtistProvider>
   // </React.StrictMode>
