@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import NewAccountContext from "./NewAccountContext";
 
 function NewAccountProvider({ children }) {
-    const [accountOk, setAccountOk] = useState(false);
+    const [userExistOk, setUserExistOk] = useState(false);
+    const [createSuccessOk, setCreateSuccessOk] = useState(false);
     const [userAccountInputValue, setUserAccountInputValue] = useState("");
     const [passwordAccountInputValue, setPasswordAccountInputValue] = useState("");
     const [userAccount, setUserAccount] = useState("");
     const [passwordAccount, setPasswordAccount] = useState("");
   
   const contextValue = {
-    setAccountOk,
-    accountOk,
+    userExistOk,
+    setUserExistOk,
     userAccountInputValue,
     setUserAccountInputValue,
     passwordAccountInputValue,
@@ -19,6 +20,8 @@ function NewAccountProvider({ children }) {
     setUserAccount,
     passwordAccount,
     setPasswordAccount,
+    createSuccessOk,
+    setCreateSuccessOk,
   };
   
   return (
