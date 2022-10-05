@@ -142,6 +142,16 @@ nav a:hover
   box-shadow: 5px 5px 15px 8px rgb(65, 63, 63);
 }
 
+.main-login img {
+  width: 100%;
+}
+
+.main-login a {
+  text-decoration: none;
+  align-self: center;
+  margin-top: 3%;
+}
+
 .form-login {
   display: flex;
   flex-direction: column;

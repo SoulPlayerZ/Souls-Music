@@ -40,9 +40,8 @@ function NewAccount () {
         setCreateSuccessOk(true);
         setTimeout(() => {
           history("/");
-        }, 2000);
+        }, 1500);
       }
-      
     }
 
   const enableButton = () => {
@@ -64,7 +63,7 @@ function NewAccount () {
            >Create Account
         </button>
         }
-        <Link to="/">Sign</Link>
+        <Link to="/">Sign in</Link>
       </form>
     </main>
   )

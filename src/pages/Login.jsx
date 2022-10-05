@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import LoginContext from "../context/LoginContext";
 import { getUser } from "../data/data";
+import logo_teste from "../images/logo_teste.png";
 
 
 function Login () {
@@ -47,7 +48,7 @@ function Login () {
 
   return (
     <main className="main-login">
-      <img src="https://is2-ssl.mzstatic.com/image/thumb/Music/10/e7/07/mzi.wcllksyu.tif/400x400bb.jpg" alt='logo' />
+      <img src={ logo_teste } alt='logo' />
         <form className="form-login">
         <h2 className="login-title ">Sign in</h2>
         <input type="text" placeholder="User" name="user" className="form-control input-user " onChange={ handleChange } value={ userInputValue }/>
